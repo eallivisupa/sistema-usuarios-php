@@ -1,6 +1,6 @@
 # sistema-usuarios-php
 Sistema web seguro de gestión de usuarios en PHP y MySQL. Implementa autenticación, control de accesos con $_SESSION, hashing de contraseñas con Bcrypt, actualización de perfil y modo oscuro nativo con Font Awesome.
-# Sistema Seguro de Gestión de Usuarios
+
 ## Descripción del Sistema
 Este es un sistema web desarrollado en PHP y MySQL que permite la gestión segura de usuarios. Implementa funcionalidades de autenticación (Login/Registro), manejo de estado mediante sesiones de PHP, y una zona privada donde los usuarios pueden actualizar su información básica y cambiar su contraseña de forma segura. Además, cuenta con un diseño responsivo, Modo Oscuro nativo y UI con Font Awesome.
 
