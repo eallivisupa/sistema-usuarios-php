@@ -1,0 +1,154 @@
+/* style.css */
+:root {
+    /* Paleta Modo Claro (Teal Corporativo) */
+    --bg-color: #f0f4f8;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #475569;
+    --primary-color: #0f766e; 
+    --accent-color: #f97316;  
+    --accent-hover: #ea580c;
+    --input-bg: #ffffff;
+    --border-color: #cbd5e1;
+    --nav-bg: #0f766e;
+    --nav-text: #ffffff;
+}
+
+[data-theme="dark"] {
+    /* Paleta Modo Oscuro (Orange & Teal Cinematográfico) */
+    --bg-color: #0b1120;      
+    --card-bg: #1e293b;       
+    --text-main: #f8fafc;     
+    --text-muted: #94a3b8;
+    --primary-color: #2dd4bf; 
+    --accent-color: #f97316;  
+    --accent-hover: #ea580c;
+    --input-bg: #0f172a;
+    --border-color: #334155;
+    --nav-bg: #020617;
+    --nav-text: #2dd4bf;
+}
+
+/* --- ESTILOS BASE --- */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.perfil-layout { display: block; padding: 20px; height: auto; }
+
+/* --- CONTENEDORES --- */
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 360px;
+    transition: background-color 0.3s;
+}
+
+.container {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+
+h2 { text-align: center; color: var(--primary-color); margin-top: 0; margin-bottom: 25px; font-size: 24px; }
+
+/* --- FORMULARIOS --- */
+.form-group { margin-bottom: 18px; }
+label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-muted); font-size: 14px; }
+
+input {
+    width: 100%; padding: 12px;
+    background-color: var(--input-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+input:focus { border-color: var(--primary-color); outline: none; }
+input[readonly] { opacity: 0.6; cursor: not-allowed; background-color: var(--bg-color); }
+
+button {
+    width: 100%; padding: 12px;
+    background-color: var(--accent-color);
+    color: white; border: none; border-radius: 6px;
+    cursor: pointer; font-size: 16px; font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+button:hover { background-color: var(--accent-hover); transform: translateY(-1px); }
+
+/* --- ENLACES Y TEXTOS --- */
+a { color: var(--primary-color); text-decoration: none; font-weight: bold; }
+a:hover { color: var(--accent-color); }
+p { text-align: center; font-size: 14px; color: var(--text-muted); margin-top: 20px; }
+
+/* --- NAVBAR DEL PERFIL --- */
+.navbar {
+    background-color: var(--nav-bg); color: var(--nav-text);
+    padding: 18px 25px; display: flex; justify-content: space-between;
+    align-items: center; border-radius: 8px; margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+.navbar a { color: var(--accent-color); margin-left: 20px; font-size: 15px; }
+.navbar a:hover { color: #ffffff; }
+
+/* --- ALERTAS --- */
+.msg { padding: 12px; margin-bottom: 20px; border-radius: 6px; text-align: center; font-weight: 600; font-size: 14px; }
+.error { background-color: rgba(220, 53, 69, 0.1); color: #f87171; border: 1px solid #dc3545; }
+.success { background-color: rgba(40, 167, 69, 0.1); color: #34d399; border: 1px solid #28a745; }
+
+/* --- BOTÓN FLOTANTE MODO OSCURO --- */
+.theme-toggle {
+    position: fixed; bottom: 20px; right: 20px;
+    background-color: var(--card-bg); border: 2px solid var(--primary-color);
+    color: var(--primary-color); border-radius: 50%; width: 48px; height: 48px;
+    font-size: 18px; cursor: pointer; display: flex;
+    justify-content: center; align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: background-color 0.3s, transform 0.2s;
+    z-index: 999;
+}
+.theme-toggle:hover { transform: scale(1.05); }
+
+/* --- EL OJITO DE LA CONTRASEÑA --- */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.password-container input {
+    padding-right: 40px; 
+}
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.2s;
+}
+.toggle-password:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
